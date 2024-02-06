@@ -28,6 +28,8 @@
 
 .navbar .navbar__content .navbar__links a:hover {
     color: var(--tertiary-color);
+    transition: transform 0.3s;
+    transform: scale(1.5);
 }
 
 .navbar.active {
@@ -75,6 +77,13 @@
         padding: 1rem;
         display: block;
         text-align: center;
+        animation: transform 0.3s;
+        transform: scale(1); 
+    }
+
+    .navbar .navbar__content .navbar__mobile li a:hover{
+     animation: transform 0.3s;
+     transform: scale(1.5);   
     }
 }
 

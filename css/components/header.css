@@ -48,6 +48,28 @@ header .header__right .header__image .background{
     z-index: -1;
 }
 
+header .header__left .header__container #hello-world{
+    height: 1.5em;
+}
+
+.hidden{
+    opacity: 0;
+}
+
+.heaeder .header__left .header__container{
+    text-align:center;
+    height:6rem;
+    width:16rem;
+    display:block;
+    position:absolute;
+    color:var(--white);
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+  }
+
 @media only screen and (max-width: 768px){
     header {
         flex-direction: column-reverse;
