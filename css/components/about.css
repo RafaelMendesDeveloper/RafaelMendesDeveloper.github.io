@@ -23,8 +23,62 @@
 }
 
 .about .about__left ul li a{
-    display: inline-block;
-    padding: 1rem;
+    display: block;
+    width: 7rem;
+    height: 7rem;
+    background-color: var(--light-tertiary-color);
+    text-align: center;
+    line-height: 7rem;
+    font-size: 2.2rem;
+    margin: 0 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+ 
+  .about .about__left ul li a:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    z-index: 2;
+  }
+  
+  .about .about__left ul li a:hover:before {
+    top: 0;
+  }
+  
+  .about .about__left ul li:nth-child(1) a:before{
+    background: rgb(59, 89, 153, 0.3);
+  }
+  
+  .about .about__left ul li:nth-child(2) a:before{
+    background: rgb(110, 84, 148, 0.3);
+  }
+  
+  .about .about__left ul li:nth-child(3) a:before {
+    background: linear-gradient(180deg, rgba(131,58,180,0.3) 0%, rgba(253,29,29,0.3) 50%, rgba(252,176,69,0.3) 100%);
+  }
+
+  .about .about__left ul li:nth-child(4) a:before{
+    background: rgb(29, 185, 84, 0.3);
+  }
+
+.about .about__left ul li a .icon{
+    position: relative;
+    color: #262626;
+    transition: .5s;
+    z-index: 3;
+}
+
+.about .about__left ul li a:hover .icon{
+    color: #fff;
+    transform: rotateY(360deg);
 }
 
 .about .about__right {

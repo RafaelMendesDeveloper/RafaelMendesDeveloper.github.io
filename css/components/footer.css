@@ -8,6 +8,11 @@ footer .footer__content{
     max-width: 47rem;   
 }
 
+footer .footer__content .footer__contact ul{
+    animation: transform 0.3s;
+    transform: scale(1.5);
+}
+
 footer .footer_content .footer__contact span {
     display: block;
     font-weight: 500;

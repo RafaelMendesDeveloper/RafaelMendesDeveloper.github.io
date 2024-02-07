@@ -11,7 +11,7 @@ window.addEventListener('scroll', function(){
     return navbar.classList.remove('active');
 })
 
-consoleText(['Hello, World!', 'Olá, Mundo!', '¡Hola, Mundo!', 'Bonjour, Monde!', 'Ciao, Mondo!'], 'hello-world', ['tomato', 'rebeccapurple', 'lightblue', 'tomato', 'rebeccapurple']);
+consoleText(['Hello, World!', 'Olá, Mundo!', '¡Hola, Mundo!', 'Ciao, Mondo!'], 'hello-world',['tomato', 'rebeccapurple', 'lightblue']);
 
 function consoleText(words, id, colors) {
   if (colors === undefined) colors = ['#fff'];
@@ -50,3 +50,13 @@ function consoleText(words, id, colors) {
     }
   }, 120)
 }
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
