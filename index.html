@@ -8,6 +8,8 @@
     <title>RMendes Portfólio</title>
 
     <link rel="stylesheet" href="css/extends.css">
+
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -79,44 +81,50 @@
     <section id="skills" class="skills">
         <div class="skills__content max-width">
             <h2 class="tertiary-title">Minha caixinha de ferramentas</h2>
-            <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat temporibus placeat nostrum deserunt a corrupti cumque, incidunt ratione ipsum rerum. Accusantium, tenetur. Ut, beatae recusandae labore laborum in libero quidem.</p>
-            <ul>
-                <li class="skills__item">
-                    <div class="image-container">
-                        <img src="assets/notebook.png" alt="Desenvolvimento Web">
-                    </div>
-                    <h3>Desenvolvimento Web</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, iure ad sed totam impedit animi a eum nesciunt veritatis repellat rerum, omnis hic quidem, illo autem! Explicabo voluptas dicta autem.</p>
-                </li>
-                <li class="skills__item">
-                    <div class="image-container">
-                        <img src="assets/colors.png" alt="Web Design">
-                    </div>
-                    <h3>Web Design</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, iure ad sed totam impedit animi a eum nesciunt veritatis repellat rerum, omnis hic quidem, illo autem! Explicabo voluptas dicta autem.</p>
-                </li>
-                <li class="skills__item">
-                    <div class="image-container">
-                        <img src="assets/phone.png" alt="Desenvolvimento Mobile">
-                    </div>
-                    <h3>Desenvolvimento Mobile</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, iure ad sed totam impedit animi a eum nesciunt veritatis repellat rerum, omnis hic quidem, illo autem! Explicabo voluptas dicta autem.</p>
-                </li>
-                <li class="skills__item">
-                    <div class="image-container">
-                        <img src="assets/files.png" alt="Gerenciamento de Versões">
-                    </div>
-                    <h3>Gerenciamento de Versões</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, iure ad sed totam impedit animi a eum nesciunt veritatis repellat rerum, omnis hic quidem, illo autem! Explicabo voluptas dicta autem.</p>
-                </li>
-            </ul>
+            <p class="description">Minhas competências e habilidades que podem ajudar a sua empresa!</p>
+            <div class="wrapper">
+                <i id="left" class="fa-solid fa-angle-left"></i>
+                <ul class="carousel">
+                  <li class="card">
+                    <div class="img"><img src="assets/webPhoto.png" alt="img" draggable="false"></div>
+                    <h2>Desenvolvimento Web</h2>
+                    <span>HTML, Css e Javascript</span>
+                  </li>
+                  <li class="card">
+                    <div class="img"><img src="assets/databasePhoto.png" alt="img" draggable="false"></div>
+                    <h2>Banco de Dados</h2>
+                    <span>MySQL e SqLite</span>
+                  </li>
+                  <li class="card">
+                    <div class="img"><img src="assets/mobilePhoto.png" alt="img" draggable="false"></div>
+                    <h2>Desenvolvimento Mobile</h2>
+                    <span>Dart e Flutter</span>
+                  </li>
+                  <li class="card">
+                    <div class="img"><img src="assets/uxuiPhoto.png" alt="img" draggable="false"></div>
+                    <h2>Design</h2>
+                    <span>Noções de User Experience</span>
+                  </li>
+                  <li class="card">
+                    <div class="img"><img src="assets/gitPhoto.png" alt="img" draggable="false"></div>
+                    <h2>Git</h2>
+                    <span>Gerenciamento de Versões</span>
+                  </li>
+                  <li class="card">
+                    <div class="img"><img src="assets/scrumPhoto.png" alt="img" draggable="false"></div>
+                    <h2>Metodologias Ágeis</h2>
+                    <span>Desenvolvimento Ágil de Software</span>
+                  </li>
+                </ul>
+                <i id="right" class="fa-solid fa-angle-right"></i>
+              </div>
         </div>
     </section>
 
     <section id="projects" class="projects max-width">
         <div class="projects__content">
             <h2 class="secondary-title">Projetos em Destaque</h2>
-            <p>De ideias abstratas a projetos bem-sucedidos, aqui estão alguns dos meus trabalhos mais recentes</p>
+            <p>Aqui estão alguns dos meus trabalhos mais recentes</p>
         </div>
         <ul>
             <li>
@@ -124,29 +132,19 @@
                     <img src="assets/task-manager.png" alt="Exemplo de Trabalho">
                 </div>
                 <div class="projects__info">
-                    <h3 class="tertiary-title">Exemplo 01 de Projeto</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dolorum ex tenetur aliquid est totam doloremque, temporibus vel suscipit ea dicta ipsa cum in dolore, esse fugit consequatur ipsum sed.</p>
-                    <a href="#">Leia mais &rarr;</a>
+                    <h3 class="tertiary-title">Anderson Automóveis</h3>
+                    <p>Aplicativo funcional feito utilizando o FrameWork Flutter, de um sistema de gerenciamento de uma concessionária.</p>
+                    <a href="https://github.com/RafaelMendesDeveloper/Final_Project/tree/main/projeto_final" target="_blank">Leia mais &rarr;</a>
                 </div>
             </li>
             <li class="projects__reversed-list">
                 <div class="image">
-                    <img src="assets/task-manager.png" alt="Exemplo de Trabalho">
+                    <img src="assets/site.PNG" alt="Exemplo de Trabalho">
                 </div>
                 <div class="projects__info">
-                    <h3 class="tertiary-title">Exemplo 02 de Projeto</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dolorum ex tenetur aliquid est totam doloremque, temporibus vel suscipit ea dicta ipsa cum in dolore, esse fugit consequatur ipsum sed.</p>
-                    <a href="#">Leia mais &rarr;</a>
-                </div>
-            </li>
-            <li>
-                <div class="image">
-                    <img src="assets/task-manager.png" alt="Exemplo de Trabalho">
-                </div>
-                <div class="projects__info">
-                    <h3 class="tertiary-title">Exemplo 03 de Projeto</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dolorum ex tenetur aliquid est totam doloremque, temporibus vel suscipit ea dicta ipsa cum in dolore, esse fugit consequatur ipsum sed.</p>
-                    <a href="#">Leia mais &rarr;</a>
+                    <h3 class="tertiary-title">Site de Portfólio</h3>
+                    <p>Site de Portfólio, utilizando o básico do Desenvolvimento Web, afim de demonstrar minhas competências.</p>
+                    <a href="https://github.com/RafaelMendesDeveloper/RafaelMendesDeveloper.github.io" target="_blank">Leia mais &rarr;</a>
                 </div>
             </li>
         </ul>
@@ -168,6 +166,7 @@
         </div>
     </footer>
 
-    <script src="scripts/index.js"></script>
 </body>
+    <script src="scripts/swiper-bundle.min.js" defer></script>
+    <script src="scripts/index.js"></script>
 </html>
