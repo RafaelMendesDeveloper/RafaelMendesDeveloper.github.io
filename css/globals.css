@@ -99,7 +99,15 @@
   .mb-xl {
     margin-bottom: 6rem;
   }
-  
+ 
+  .transition{
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(166,177,225,1) 100%);
+    height: 10px;
+    width: 100%;
+  }
+
+
   @media only screen and (max-width: 1024px) {
     html {
       font-size: 60%;
