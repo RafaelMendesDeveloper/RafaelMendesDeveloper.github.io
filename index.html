@@ -23,14 +23,14 @@
             <a href="/">
                 <h2>RMendes</h2>
             </a>
-            <ul class="navbar__links">
+            <ul class="navbar__links" id="navbar_links">
                 <li><a href="#header">Ínicio</a></li>
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#skills">Habilidades</a></li>
                 <li><a href="#projects">Projetos</a></li>
                 <li><a href="#footer">Contato</a></li>
             </ul>
-        <div class="navbar__mobile">
+        <div class="navbar__mobile" id="navbar_links">
             <img src="assets/menu.svg" alt="menu" class="burger" />
             <ul class="mobile__links">
                 <li><a href="#header">Ínicio</a></li>
@@ -48,7 +48,8 @@
             <div class="header__container">
                 <h1 id="hello-world"></h1>
             </div>
-            <h1>Sou Rafael Mendes Desenvolvedor Fullstack</h1>
+            <h1>Sou Rafael Mendes</h1>
+            <h1 id="developer-title"> Desenvolvedor Fullstack</h1>
             <p>Guiado por uma paixão pela inovação e um desejo insaciável de aprendizado, possuo uma base sólida em programação e uma habilidade natural para o pensamento lógico. Estou ansioso para aplicar minhas habilidades e conhecimentos em projetos e aplicações do mundo real.</p>
             <a href="#about" class="btn btn-primary" id="botao">Saiba Mais!</a>
         </div>
@@ -78,7 +79,7 @@
         </div>
     </section>
 
-    <div class="transition"></div>
+    <!-- <div class="transition"></div> -->
     
     <section id="skills" class="skills">
         <div class="skills__content max-width">
@@ -132,7 +133,7 @@
     <section id="projects" class="projects max-width">
         <div class="projects__content">
             <h2 class="secondary-title">Projetos em Destaque</h2>
-            <p>Aqui estão alguns dos meus trabalhos mais recentes</p>
+            <p>Aqui estão alguns dos meus trabalhos e contribuições mais recentes</p>
         </div>
         <ul>
             <li>
@@ -143,6 +144,26 @@
                     <h3 class="tertiary-title">Gráfica 4k Impressos</h3>
                     <p>Site de uma gráfica, utilizando HTML, CSS e Js</p>
                     <a href="https://4kimpressos.com.br" target="_blank">Leia mais &rarr;</a>
+                </div>
+            </li>
+            <li class="projects__reversed-list">
+                <div class="image">
+                    <img src="assets/dice.PNG" alt="Exemplo de Trabalho">
+                </div>
+                <div class="projects__info">
+                    <h3 class="tertiary-title">Dado para War</h3>
+                    <p>Contribuição para um projeto para simular os dados de um jogo de War, utilizando TypeScript, Astro e React</p>
+                    <a href="https://github.com/arthurfiorette/risk-dice" target="_blank">Leia mais &rarr;</a>
+                </div>
+            </li>
+            <li>
+                <div class="image">
+                    <img src="assets/android.png" alt="Exemplo de Trabalho">
+                </div>
+                <div class="projects__info">
+                    <h3 class="tertiary-title">Projetos Android</h3>
+                    <p>Repositório para aplicações Android, utilizando Java no Android Studio</p>
+                    <a href="https://github.com/RafaelMendesDeveloper/ddm" target="_blank">Leia mais &rarr;</a>
                 </div>
             </li>
             <li class="projects__reversed-list">
@@ -168,7 +189,7 @@
         </ul>
     </section>
 
-    <div class="transition"></div>
+    <!-- <div class="transition"></div> -->
 
     <footer id="footer">    
         <div class="footer__content max-width mb-0">

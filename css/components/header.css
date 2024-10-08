@@ -74,7 +74,6 @@ header .header__left .header__container #hello-world{
     cursor: pointer;
     position: relative;
     padding: 10px 20px;
-    background: var(--tertiary-color);
     color: var(--primary-color);
     font-size: 28px;
     border-top-right-radius: 10px;

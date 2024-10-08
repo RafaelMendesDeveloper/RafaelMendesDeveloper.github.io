@@ -9,6 +9,7 @@
 }
 
 .projects ul li{
+    gap: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,9 +24,13 @@
 }
 
 .projects ul li .image img{
-    width: 100%;
-    min-width: 40rem;
+    width: auto;
     max-width: 60rem;
+    min-width: 30rem;
+    /* min-width: 20rem;
+    max-width: 30rem;
+    min-height: 20rem;*/
+    max-height: 30rem; 
     height: auto;
 }
 
@@ -42,11 +47,6 @@
     text-decoration: underline;
 }
 
-.image-grafica{
-    width: 20rem;
-    height: 20rem;
-}
-
 @media only screen and (max-width: 768px) {
     .projects ul li,
     .projects ul li.projects__reversed-list{
@@ -55,9 +55,11 @@
 
     .projects ul li .projects__info{
         max-width: 66rem;
+        margin-bottom: 10rem;
     }
 
     .projects ul li .image img {
         min-width: auto;
+        width: 100%;
     }
 }
