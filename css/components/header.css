@@ -4,6 +4,7 @@ header{
     align-items: center;
     gap: 4rem;
     scroll-margin-top: 20rem;
+    color: var(--black);
 }
 
 header .header__left{
@@ -62,7 +63,6 @@ header .header__left .header__container #hello-world{
     width:16rem;
     display:block;
     position:absolute;
-    color:var(--white);
     top:0;
     bottom:0;
     left:0;
@@ -72,9 +72,9 @@ header .header__left .header__container #hello-world{
 
   #botao {
     cursor: pointer;
+    color: var(--black);
     position: relative;
     padding: 10px 20px;
-    color: var(--primary-color);
     font-size: 28px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;

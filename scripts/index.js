@@ -158,3 +158,10 @@ document.addEventListener("mouseup", dragStop);
 carousel.addEventListener("scroll", infiniteScroll);
 wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 wrapper.addEventListener("mouseleave", autoPlay);
+
+
+const toggleButton = document.getElementById('theme');
+
+toggleButton.addEventListener('change', () => {
+    document.body.classList.toggle('dark-theme');
+});

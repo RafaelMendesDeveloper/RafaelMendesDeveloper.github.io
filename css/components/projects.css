@@ -1,5 +1,6 @@
 .projects{
     scroll-margin-top: 15rem;
+    color: var(--black);
 }
 
 .projects .projects__content{

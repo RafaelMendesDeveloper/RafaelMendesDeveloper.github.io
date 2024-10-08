@@ -3,6 +3,7 @@
     justify-content: space-between;
     gap: 4rem;
     scroll-margin-top: 20rem;
+    color: var(--black);
 }
 
 .about .about__left{
