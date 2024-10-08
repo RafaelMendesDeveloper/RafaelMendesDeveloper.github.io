@@ -16,6 +16,7 @@
     margin-top: 15rem;
     background-color: var(--background-color);
     transition: ease 0.3s;
+    overflow-x: hidden;
   }
   
   ul {
