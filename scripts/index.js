@@ -11,17 +11,29 @@ window.addEventListener('scroll', function(){
     return navbar.classList.remove('active');
 })
 
-consoleText(['Hello, World!', 'Olá, Mundo!', '¡Hola, Mundo!', 'Ciao, Mondo!'], 'hello-world',['tomato', 'rebeccapurple', 'lightblue']);
+consoleText(['Hello, World!', 'Olá, Mundo!', '¡Hola, Mundo!', 'Ciao, Mondo!'], ['hello-world', 'developer-title', 'botao', 'skills', 'footer', 'navbar_links'],['#ec6363', '#ec7963', '#ecb163', '#dfd487', '#bdebca']);
 
 function consoleText(words, id, colors) {
+
   if (colors === undefined) colors = ['#fff'];
   var visible = true;
   var con = document.getElementById('console');
   var letterCount = 1;
   var x = 1;
   var waiting = false;
-  var target = document.getElementById(id);
+  var target = document.getElementById(id[0]);
+  var dev = document.getElementById(id[1]);
+  var botao = document.getElementById(id[2]);
+  var skills = document.getElementById(id[3]);
+  var footer = document.getElementById(id[4]);
+  var navbarText = document.getElementById(id[5]);
   target.setAttribute('style', 'color:' + colors[0]);
+  dev.setAttribute('style', 'color:' + colors[0]);
+  botao.style.setProperty('background-color', colors[0]);
+  skills.style.setProperty('background-color', colors[0]);
+  footer.style.setProperty('background-color', colors[0]);
+  navbarText.setAttribute('style', 'color:' + colors[0]);
+
   window.setInterval(function() {
 
     if (letterCount === 0 && waiting === false) {
@@ -34,6 +46,11 @@ function consoleText(words, id, colors) {
         words.push(usedWord);
         x = 1;
         target.setAttribute('style', 'color:' + colors[0])
+        dev.setAttribute('style', 'color:' + colors[0])
+        botao.style.setProperty('background-color', colors[0], 'important');
+        skills.style.setProperty('background-color', colors[0]);
+        footer.style.setProperty('background-color', colors[0]);
+        navbarText.setAttribute('style', 'color:' + colors[0]);
         letterCount += x;
         waiting = false;
       }, 1000)
