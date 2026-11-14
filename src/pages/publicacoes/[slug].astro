@@ -1,0 +1,12 @@
+---
+import Paper from '../../components/Paper.astro';
+import { publications } from '../../lib/publications';
+
+export function getStaticPaths() {
+  return publications.map((pub) => ({ params: { slug: pub.slug }, props: { pub } }));
+}
+
+const { pub } = Astro.props;
+---
+
+<Paper lang="pt" pub={pub} />

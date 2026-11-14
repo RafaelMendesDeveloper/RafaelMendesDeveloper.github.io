@@ -1,0 +1,78 @@
+export type Lang = 'pt' | 'en';
+
+export const ui = {
+  pt: {
+    htmlLang: 'pt-BR',
+    ogLocale: 'pt_BR',
+    home: '/',
+    skip: 'Pular para o conteúdo',
+    langSwitch: 'Idioma',
+    nav: 'Seções',
+    sections: {
+      about: 'Sobre',
+      experience: 'Experiência',
+      publications: 'Publicações',
+      education: 'Formação',
+      skills: 'Habilidades',
+      contact: 'Contato',
+    },
+    present: 'presente',
+    cv: 'Currículo (PDF)',
+    pdf: 'PDF',
+    abstractLink: 'Resumo',
+    bibtex: 'BibTeX',
+    doi: 'DOI',
+    newTab: '(abre em nova aba)',
+    back: 'Rafael Mendes Pinto',
+    backLabel: 'Voltar para a página principal',
+    readPdf: 'Ler o artigo (PDF)',
+    resumoHeading: 'Resumo',
+    abstractHeading: 'Abstract',
+    keywords: 'Palavras-chave',
+    cite: 'Como citar (BibTeX)',
+    copy: 'Copiar',
+    copied: 'Copiado',
+    titleTranslation: 'Título em inglês',
+    photoAlt: 'Foto de Rafael Mendes Pinto',
+  },
+  en: {
+    htmlLang: 'en',
+    ogLocale: 'en_US',
+    home: '/en/',
+    skip: 'Skip to content',
+    langSwitch: 'Language',
+    nav: 'Sections',
+    sections: {
+      about: 'About',
+      experience: 'Experience',
+      publications: 'Publications',
+      education: 'Education',
+      skills: 'Skills',
+      contact: 'Contact',
+    },
+    present: 'present',
+    cv: 'CV (PDF, Portuguese)',
+    pdf: 'PDF',
+    abstractLink: 'Abstract',
+    bibtex: 'BibTeX',
+    doi: 'DOI',
+    newTab: '(opens in a new tab)',
+    back: 'Rafael Mendes Pinto',
+    backLabel: 'Back to the home page',
+    readPdf: 'Read the paper (PDF, Portuguese)',
+    resumoHeading: 'Resumo (Portuguese)',
+    abstractHeading: 'Abstract',
+    keywords: 'Keywords',
+    cite: 'Cite (BibTeX)',
+    copy: 'Copy',
+    copied: 'Copied',
+    titleTranslation: 'English title',
+    photoAlt: 'Photo of Rafael Mendes Pinto',
+  },
+} as const;
+
+/** "2025-01" -> "01/2025" */
+export function formatMonth(ym: string): string {
+  const [y, m] = ym.split('-');
+  return m ? `${m}/${y}` : y;
+}

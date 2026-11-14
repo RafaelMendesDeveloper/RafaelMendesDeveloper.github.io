@@ -1,0 +1,21 @@
+[
+  {
+    "slug": "sce-serverless",
+    "titulo": "O uso de Security Chaos Engineering para ambientes serverless",
+    "titulo_en": "Using Security Chaos Engineering in serverless environments",
+    "autores": ["Rafael Mendes Pinto"],
+    "local": "Programa de Pós-Graduação em Ciência da Computação, UFSC",
+    "local_en": "Graduate Program in Computer Science, UFSC",
+    "status": "Manuscrito não publicado",
+    "status_en": "Unpublished manuscript",
+    "ano": 2026,
+    "data": "2026-11",
+    "tipo": "unpublished",
+    "idioma": "pt",
+    "citavel": false,
+    "resumo": "A adoção de arquiteturas serverless transfere ao provedor de nuvem a gestão da infraestrutura, mas mantém com o cliente a responsabilidade por permissões, validação de eventos e controle de custos. Este artigo aplica a Engenharia do Caos de Segurança para testar se esses controles funcionam. Com o AWS Fault Injection Service, foram executados três experimentos, um por pilar da tríade CID: permissão excessiva, payload adulterado e Denial of Wallet. Mesmo com boas práticas, os experimentos revelaram detecção sem contenção, um alarme que deixava de notificar após o primeiro ataque e um limite de concorrência que atrasava os alertas de custo.",
+    "abstract": "Serverless architectures shift infrastructure management to the cloud provider, but customers remain responsible for permissions, event validation, and cost control. This paper applies Security Chaos Engineering to test whether these controls work. Three experiments were run with AWS Fault Injection Service, one per pillar of the CIA triad: over-privileged permissions, tampered payloads, and Denial of Wallet. Despite best-practice controls, the experiments revealed detection without containment, an alarm that stopped notifying after the first attack, and a concurrency limit that delayed cost alerts.",
+    "tags": ["Serverless", "AWS", "Security Chaos Engineering", "Fault Injection Service", "Denial of Wallet"],
+    "pdf": "/publicacoes/sce-serverless.pdf"
+  }
+]

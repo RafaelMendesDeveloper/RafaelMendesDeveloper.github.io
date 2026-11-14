@@ -1,0 +1,139 @@
+---
+import Base from '../layouts/Base.astro';
+import LangSwitch from './LangSwitch.astro';
+import { ui, type Lang } from '../lib/i18n';
+import { bibtex, field, pubPath, scholarDate, type Publication } from '../lib/publications';
+
+interface Props {
+  lang: Lang;
+  pub: Publication;
+}
+
+const { lang, pub } = Astro.props;
+const t = ui[lang];
+const site = Astro.site!;
+const path = pubPath(pub, lang);
+const altPath = pubPath(pub, lang === 'pt' ? 'en' : 'pt');
+const pdfUrl = new URL(pub.pdf, site).href;
+const paperLang = pub.idioma === 'pt' ? 'pt-BR' : 'en';
+const description = (lang === 'pt' ? pub.resumo : pub.abstract).slice(0, 157).replace(/\s+\S*$/, '') + '…';
+
+const resumo = { id: 'resumo-pt', heading: t.resumoHeading, text: pub.resumo, lang: 'pt-BR' };
+const abstract = { id: 'abstract-en', heading: t.abstractHeading, text: pub.abstract, lang: 'en' };
+// Na versão em inglês, o abstract vem primeiro.
+const blocks = lang === 'pt' ? [resumo, abstract] : [abstract, resumo];
+---
+
+<Base
+  lang={lang}
+  title={`${pub.titulo} · ${pub.autores.join(', ')}`}
+  description={description}
+  path={path}
+  altPath={altPath}
+  ogType="article"
+>
+  <Fragment slot="head">
+    {
+      pub.citavel && (
+        <>
+          <meta name="citation_title" content={pub.titulo} />
+          {pub.autores.map((a) => (
+            <meta name="citation_author" content={a} />
+          ))}
+          <meta name="citation_publication_date" content={scholarDate(pub)} />
+          <meta name="citation_pdf_url" content={pdfUrl} />
+          <meta name="citation_language" content={pub.idioma} />
+          {pub.doi && <meta name="citation_doi" content={pub.doi} />}
+        </>
+      )
+    }
+  </Fragment>
+
+  <nav class="topbar" aria-label={t.nav}>
+    <p class="meta">
+      <a href={t.home} title={t.backLabel}><span aria-hidden="true">← </span>{t.back}</a>
+    </p>
+    <LangSwitch lang={lang} altPath={altPath} />
+  </nav>
+
+  <main id="conteudo">
+    <article class="paper">
+      <header class="paper-header">
+        <p class="meta">{field.status(pub, lang)} · {pub.ano}</p>
+        <h1 lang={paperLang}>{pub.titulo}</h1>
+        {
+          lang === 'en' && pub.titulo_en && (
+            <p class="paper-translation">
+              <span class="sr-only">{t.titleTranslation}: </span>[{pub.titulo_en}]
+            </p>
+          )
+        }
+        <p class="paper-authors">{pub.autores.join(', ')}</p>
+        <p class="paper-affiliation">{field.local(pub, lang)}</p>
+        <ul class="pub-links meta paper-actions">
+          <li>
+            <a href={pub.pdf} target="_blank" rel="noopener">
+              {t.readPdf}<span class="sr-only"> {t.newTab}</span>
+            </a>
+          </li>
+          {
+            pub.doi && (
+              <li>
+                <a href={`https://doi.org/${pub.doi}`}>DOI: {pub.doi}</a>
+              </li>
+            )
+          }
+        </ul>
+        {
+          pub.tags.length > 0 && (
+            <p class="paper-tags meta">
+              <span class="sr-only">{t.keywords}: </span>
+              {pub.tags.join(' · ')}
+            </p>
+          )
+        }
+      </header>
+
+      <div id="resumo">
+        {
+          blocks.map((b) => (
+            <section class="section" aria-labelledby={b.id}>
+              <h2 id={b.id}>{b.heading}</h2>
+              <p lang={b.lang}>{b.text}</p>
+            </section>
+          ))
+        }
+      </div>
+
+      {
+        pub.citavel && (
+          <section class="section" aria-labelledby="bibtex">
+            <h2 id="bibtex">{t.cite}</h2>
+            <div class="bibtex">
+              <pre lang="en"><code id="bibtex-code">{bibtex(pub, site)}</code></pre>
+              <button class="copy-btn" type="button" hidden data-copy="bibtex-code" data-done={t.copied}>
+                {t.copy}
+              </button>
+            </div>
+          </section>
+        )
+      }
+    </article>
+  </main>
+</Base>
+
+<script>
+  // Melhoria progressiva: o botão só aparece com JS e Clipboard API.
+  for (const btn of document.querySelectorAll<HTMLButtonElement>('[data-copy]')) {
+    if (!navigator.clipboard) continue;
+    btn.hidden = false;
+    const label = btn.textContent;
+    btn.addEventListener('click', async () => {
+      const code = document.getElementById(btn.dataset.copy!);
+      if (!code) return;
+      await navigator.clipboard.writeText(code.textContent ?? '');
+      btn.textContent = btn.dataset.done ?? label;
+      setTimeout(() => (btn.textContent = label), 2000);
+    });
+  }
+</script>

@@ -1,0 +1,14 @@
+---
+import { formatMonth, ui, type Lang } from '../lib/i18n';
+
+interface Props {
+  lang: Lang;
+  start: string;
+  end: string | null;
+}
+
+const { lang, start, end } = Astro.props;
+---
+
+<time datetime={start}>{formatMonth(start)}</time> –{' '}
+{end ? <time datetime={end}>{formatMonth(end)}</time> : ui[lang].present}

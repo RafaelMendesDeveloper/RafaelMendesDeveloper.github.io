@@ -1,0 +1,33 @@
+---
+import { ui, type Lang } from '../lib/i18n';
+
+interface Props {
+  lang: Lang;
+  /** Caminho da página atual no outro idioma. */
+  altPath: string;
+}
+
+const { lang, altPath } = Astro.props;
+const t = ui[lang];
+---
+
+<p class="lang-switch meta">
+  <span class="sr-only">{t.langSwitch}: </span>
+  {
+    lang === 'pt' ? (
+      <>
+        <span aria-current="page">PT</span> |{' '}
+        <a href={altPath} hreflang="en" lang="en">
+          EN
+        </a>
+      </>
+    ) : (
+      <>
+        <a href={altPath} hreflang="pt-BR" lang="pt-BR">
+          PT
+        </a>{' '}
+        | <span aria-current="page">EN</span>
+      </>
+    )
+  }
+</p>
